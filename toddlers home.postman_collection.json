@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "2b7f21ae-575f-4615-a573-d62cf3d2dd8e",
+		"name": "toddlers home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29359476",
+		"_collection_link": "https://www.postman.com/solar-shuttle-260540/workspace/subhpublicworkspace/collection/29359476-2b7f21ae-575f-4615-a573-d62cf3d2dd8e?action=share&source=collection_link&creator=29359476"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"a@a.com\",\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"a@a.com\",\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "apply",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"passphot\":File Input\r\n    \"applicationData\": {\r\n        \"applyingFor\": {\r\n            \"name\": \"Nursery\",\r\n            \"timing\": \"9:00 AM - 12:00 PM\"\r\n        },\r\n        \"admissionSeekingIn\": [\r\n            \"nursery\",\r\n            \"dayCare\"\r\n        ],\r\n        \"candidateDetails\": {\r\n            \"studentName\": {\r\n                \"first\": \"John\",\r\n                \"middle\": \"A\",\r\n                \"last\": \"Doe\"\r\n            },\r\n            \"dateOfBirth\": \"2019-05-12\",\r\n            \"gender\": \"Male\",\r\n            \"placeOfBirth\": \"New York\",\r\n            \"nationality\": \"American\",\r\n            \"firstLanguage\": \"English\",\r\n            \"otherLanguagesKnown\": \"Spanish\"\r\n        },\r\n        \"residentialAddress\": {\r\n            \"addressLine\": \"123 Main St\",\r\n            \"city\": \"New York\",\r\n            \"state\": \"NY\",\r\n            \"country\": \"USA\",\r\n            \"pinCode\": \"10001\"\r\n        },\r\n        \"father\": {\r\n            \"fullName\": {\r\n                \"first\": \"Michael\",\r\n                \"middle\": \"B\",\r\n                \"last\": \"Doe\"\r\n            },\r\n            \"email\": \"michael.doe@example.com\",\r\n            \"educationalQualification\": \"Bachelor's Degree\",\r\n            \"profession\": \"Engineer\",\r\n            \"designation\": \"Senior Engineer\",\r\n            \"phone\": [\r\n                \"+1234567890\",\r\n                \"+0987654321\"\r\n            ]\r\n        },\r\n        \"mother\": {\r\n            \"fullName\": {\r\n                \"first\": \"Jane\",\r\n                \"middle\": \"C\",\r\n                \"last\": \"Doe\"\r\n            },\r\n            \"email\": \"jane.doe@example.com\",\r\n            \"educationalQualification\": \"Master's Degree\",\r\n            \"profession\": \"Teacher\",\r\n            \"designation\": \"High School Teacher\",\r\n            \"phone\": [\r\n                \"+1234567899\"\r\n            ]\r\n        },\r\n        \"guardian\": {\r\n            \"fullName\": {\r\n                \"first\": \"Sarah\",\r\n                \"middle\": \"D\",\r\n                \"last\": \"Smith\"\r\n            },\r\n            \"relationWithStudent\": \"Aunt\",\r\n            \"email\": \"sarah.smith@example.com\",\r\n            \"phone\": \"+11234567890\"\r\n        },\r\n        \"location\": \"Downtown Center\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server_url}}/application/apply"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Home",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
