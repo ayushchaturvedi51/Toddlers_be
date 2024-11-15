@@ -5,7 +5,7 @@ db.on("error", function (err) {
     console.log(err.message);
 });
 db.once("open", function () {
-    console.log(`Successfully connected to the database :: MongoDB`);
+    console.log(`Successfully connected to the database`);
 });
 module.exports = db;
 //# sourceMappingURL=mongoConfig.js.map

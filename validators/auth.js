@@ -15,7 +15,7 @@ exports.loginSchema = z.object({
   body: z
     .object({
       email: z.string().email("Invalid email address"),
-      password: z.string().min(6, "Password should be at least 6 characters"),
+      password: z.string(),
     })
     .strict(),
   params: z.object({}).strict(),
